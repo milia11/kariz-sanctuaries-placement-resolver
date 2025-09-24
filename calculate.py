@@ -30,15 +30,20 @@ class Sanctuaries:
 
     @property
     def score(self):
-        return sum(self.__dict__.values())
+        # return sum(self.__dict__.values())
         # 攻撃専門
-        # return (
-        #         self.kou_bou +
-        #         self.bin_sho * 2.0 +
-        #         self.sho_geki +
-        #         self.bou_gyo_mu_shi +
-        #         self.kou_geki
-        # )
+        return (
+                self.kou_bou +
+                self.bin_sho * 2.0 +
+                self.sho_geki +
+                self.bou_gyo_mu_shi +
+                self.kou_geki
+                # +
+                # self.tai_ryoku +
+                # self.katsu_ryoku +
+                # self.sei_ki * 2
+
+        )
 
 
 # データを辞書形式で定義（アイテム名を含む）
@@ -49,8 +54,8 @@ data = {
         Sanctuaries(tai_ryoku=7875, bou_gyo_mu_shi=2550),
         Sanctuaries(katsu_ryoku=8550, kyo_ko=2550),
         Sanctuaries(sho_geki=7275, bou_gyo=12450),
-        Sanctuaries(kou_geki=2550,bou_gyo=12450),
-        Sanctuaries(kou_bou=10125,sei_ki=7875),
+        Sanctuaries(kou_geki=2550, bou_gyo=12450),
+        Sanctuaries(kou_bou=10125, sei_ki=7875),
     ],
     "アストラ王の鎧": [
         Sanctuaries(bin_sho=4800, sei_ki=8730),
@@ -58,8 +63,8 @@ data = {
         Sanctuaries(tai_ryoku=8730, bou_gyo_mu_shi=6262),
         Sanctuaries(katsu_ryoku=8550, kyo_ko=2550),
         Sanctuaries(sho_geki=8355, bou_gyo=23142),
-        Sanctuaries(kou_geki=2550,bou_gyo=23142),
-        Sanctuaries(kou_bou=11205,sei_ki=8730),
+        Sanctuaries(kou_geki=2550, bou_gyo=23142),
+        Sanctuaries(kou_bou=11205, sei_ki=8730),
     ],
     "ユピテル王の法環": [
         Sanctuaries(bin_sho=9075, sei_ki=5850),
@@ -67,8 +72,8 @@ data = {
         Sanctuaries(tai_ryoku=9306, bou_gyo_mu_shi=2550),
         Sanctuaries(katsu_ryoku=12046, kyo_ko=7005),
         Sanctuaries(sho_geki=4800, bou_gyo=12450),
-        Sanctuaries(kou_geki=15379,bou_gyo=12450),
-        Sanctuaries(kou_bou=7650,sei_ki=5850),
+        Sanctuaries(kou_geki=15379, bou_gyo=12450),
+        Sanctuaries(kou_bou=7650, sei_ki=5850),
     ],
     "エーギル王の戦矛": [
         Sanctuaries(bin_sho=4800, sei_ki=9648),
@@ -76,8 +81,8 @@ data = {
         Sanctuaries(tai_ryoku=5850, bou_gyo_mu_shi=7450),
         Sanctuaries(katsu_ryoku=12348, kyo_ko=7450),
         Sanctuaries(sho_geki=9502, bou_gyo=26562),
-        Sanctuaries(kou_geki=2550,bou_gyo=26562),
-        Sanctuaries(kou_bou=7650,sei_ki=9648),
+        Sanctuaries(kou_geki=2550, bou_gyo=26562),
+        Sanctuaries(kou_bou=7650, sei_ki=9648),
     ],
     "エーギル王の戦鎧": [
         Sanctuaries(bin_sho=4800, sei_ki=5850),
@@ -85,8 +90,8 @@ data = {
         Sanctuaries(tai_ryoku=10440, bou_gyo_mu_shi=8472),
         Sanctuaries(katsu_ryoku=13140, kyo_ko=2550),
         Sanctuaries(sho_geki=4800, bou_gyo=12450),
-        Sanctuaries(kou_geki=19560,bou_gyo=12450),
-        Sanctuaries(kou_bou=13311,sei_ki=5850),
+        Sanctuaries(kou_geki=19560, bou_gyo=12450),
+        Sanctuaries(kou_bou=13311, sei_ki=5850),
     ],
     "エーギル王の明灯": [
         Sanctuaries(bin_sho=11010, sei_ki=10890),
@@ -94,8 +99,8 @@ data = {
         Sanctuaries(tai_ryoku=5850, bou_gyo_mu_shi=2550),
         Sanctuaries(katsu_ryoku=12046, kyo_ko=7005),
         Sanctuaries(sho_geki=11010, bou_gyo=31170),
-        Sanctuaries(kou_geki=2550,bou_gyo=31170),
-        Sanctuaries(kou_bou=7650,sei_ki=10890),
+        Sanctuaries(kou_geki=2550, bou_gyo=31170),
+        Sanctuaries(kou_bou=7650, sei_ki=10890),
     ],
     "至上マッシュの扇": [
         Sanctuaries(bin_sho=11640, sei_ki=11385),
@@ -103,17 +108,17 @@ data = {
         Sanctuaries(tai_ryoku=11385, bou_gyo_mu_shi=9705),
         Sanctuaries(katsu_ryoku=8550, kyo_ko=2550),
         Sanctuaries(sho_geki=4800, bou_gyo=12450),
-        Sanctuaries(kou_geki=2550,bou_gyo=12450),
-        Sanctuaries(kou_bou=14490,sei_ki=11385),
+        Sanctuaries(kou_geki=2550, bou_gyo=12450),
+        Sanctuaries(kou_bou=14490, sei_ki=11385),
     ],
     # "ラケシス王の天秤": [#Lv19
-    #     Sanctuaries(bin_sho=3130, sei_ki=4020),
-    #     Sanctuaries(kou_bou=4980, kyo_ko_tei_ko=11560),
-    #     Sanctuaries(tai_ryoku=4020, bou_gyo_mu_shi=6633),
-    #     Sanctuaries(katsu_ryoku=10351, kyo_ko=6633),
-    #     Sanctuaries(sho_geki=3130, bou_gyo=23657),
-    #     Sanctuaries(kou_geki=13487,bou_gyo=23657),
-    #     Sanctuaries(kou_bou=4980,sei_ki=4020),
+    #     Sanctuaries(bin_sho=4800, sei_ki=5850),
+    #     Sanctuaries(kou_bou=7650, kyo_ko_tei_ko=16132),
+    #     Sanctuaries(tai_ryoku=5850, bou_gyo_mu_shi=10402),
+    #     Sanctuaries(katsu_ryoku=14647, kyo_ko=10402),
+    #     Sanctuaries(sho_geki=4800, bou_gyo=33037),
+    #     Sanctuaries(kou_geki=21225,bou_gyo=33037),
+    #     Sanctuaries(kou_bou=7650,sei_ki=5850),
     # ],
 }
 

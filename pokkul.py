@@ -16,7 +16,7 @@ class Pokkul:
 
 # 通常の枠15個 + 逃がし用の別枠2個（スコア無効）
 NUM_MAIN_FRAMES = 15
-NUM_ESCAPE_FRAMES = 1
+NUM_ESCAPE_FRAMES = 2
 # 15個の枠（各枠で重要視するステータスの重み）
 frame_weights = [
     {"hp": 1.0, "crit_dmg": 1.0},
@@ -55,13 +55,13 @@ pokkuls = [
     Pokkul("リリス", hp=155691, crit_dmg=13151, atk=49934, crit=15127, defense=38423, crit_resist=11521),
     Pokkul("アカーシュ", hp=155691, crit_dmg=13151, atk=53978, crit=15127, defense=700, crit_resist=450),
     Pokkul("フィオナ", hp=410713, crit_dmg=30555, atk=115133, crit=41456, defense=90194, crit_resist=27449),
-    Pokkul("テティス", hp=281723, crit_dmg=20364, atk=78621, crit=24111, defense=65920, crit_resist=17831, must_assign=True),
+    Pokkul("テティス", hp=281723, crit_dmg=20364, atk=78621, crit=24111, defense=65920, crit_resist=17831),
     Pokkul("ハートネル", hp=274746, crit_dmg=18668, atk=77944, crit=21603, defense=54166, crit_resist=16421, must_assign=True),
     Pokkul("ニャロン", hp=389486, crit_dmg=36617, atk=124000, crit=64400, defense=99800, crit_resist=31470),
     Pokkul("スズネ", hp=237566, crit_dmg=20357, atk=82249, crit=25325, defense=59337, crit_resist=17748, must_assign=True),
-    Pokkul("コルル", hp=255772, crit_dmg=22377, atk=91574, crit=27244, defense=63887, crit_resist=19416, must_assign=True),
+    Pokkul("コルル", hp=255772, crit_dmg=22377, atk=91574, crit=27244, defense=63887, crit_resist=19416),
     Pokkul("アスリル", hp=285692, crit_dmg=20364, atk=85621, crit=24111, defense=62200, crit_resist=17830, must_assign=True),
-    Pokkul("シラヌイ", hp=257485, crit_dmg=22171, atk=92377, crit=26352, defense=64070, crit_resist=19688, must_assign=True),
+    Pokkul("シラヌイ", hp=257485, crit_dmg=22171, atk=92377, crit=26352, defense=64070, crit_resist=19688),
     # Pokkul("カイドウ", hp=296440, crit_dmg=25790, atk=97288, crit=31381, defense=73654, crit_resist=23067, must_assign=True),
     Pokkul("ミア", hp=237569, crit_dmg=20357, atk=89910, crit=25326, defense=59337, crit_resist=17748, must_assign=True),
     Pokkul("ニャース", hp=238235, crit_dmg=20364, atk=85621, crit=24111, defense=62200, crit_resist=17830, must_assign=True),
@@ -76,9 +76,9 @@ def compute_score(pokkul, weight):
     return (
             pokkul.hp * weight.get("hp", 0) * 0.00001 +
             pokkul.crit_dmg * weight.get("crit_dmg", 0) * 0.0001 +
-            pokkul.atk * weight.get("atk", 0) +
+            pokkul.atk * weight.get("atk", 0)*100 +
             pokkul.crit * weight.get("crit", 0) * 0.0001 +
-            pokkul.defense * weight.get("defense", 0) * 0.01 +
+            pokkul.defense * weight.get("defense", 0)  +
             pokkul.crit_resist * weight.get("crit_resist", 0) * 0.001
     )
 
