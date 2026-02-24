@@ -34,14 +34,14 @@ class Sanctuaries:
         # 攻撃専門
         return (
                 self.kou_bou +
-                self.bin_sho * (1 + 0.01) +
+                self.bin_sho * (1 + 1) +
                 self.sho_geki +
-                self.bou_gyo_mu_shi*0.01 +
+                self.bou_gyo_mu_shi * 1 +
                 self.kou_geki
-            # +
-            # self.tai_ryoku +
-            # self.katsu_ryoku +
-            # self.sei_ki * 2
+                +
+                self.tai_ryoku * 0.0000001 +
+                self.katsu_ryoku * 0.0000001 +
+                self.sei_ki * 2 * 0.0000001
 
         )
 
@@ -59,6 +59,7 @@ data = {
         Sanctuaries(tai_ryoku=7875, bin_sho=7275),
         Sanctuaries(katsu_ryoku=8550, bou_gyo_mu_shi=2550),
         Sanctuaries(kyo_ko=2550, kyo_ko_tei_ko=5850),
+        Sanctuaries(sho_geki=7725, bou_gyo=12900),
     ],
     "アストラ王の鎧": [
         Sanctuaries(bin_sho=4800, sei_ki=8730),
@@ -71,6 +72,7 @@ data = {
         Sanctuaries(tai_ryoku=8730, bin_sho=4800),
         Sanctuaries(katsu_ryoku=8550, bou_gyo_mu_shi=6262),
         Sanctuaries(kyo_ko=2550, kyo_ko_tei_ko=5850),
+        Sanctuaries(sho_geki=8805, bou_gyo=23592),
     ],
     "ユピテル王の法環": [
         Sanctuaries(bin_sho=9075, sei_ki=5850),
@@ -83,6 +85,7 @@ data = {
         Sanctuaries(tai_ryoku=9306, bin_sho=9075),
         Sanctuaries(katsu_ryoku=12046, bou_gyo_mu_shi=2550),
         Sanctuaries(kyo_ko=7005, kyo_ko_tei_ko=11682),
+        Sanctuaries(sho_geki=5250, bou_gyo=12900),
     ],
     "エーギル王の戦矛": [
         Sanctuaries(bin_sho=4800, sei_ki=9648),
@@ -95,6 +98,7 @@ data = {
         Sanctuaries(tai_ryoku=5850, bin_sho=4800),
         Sanctuaries(katsu_ryoku=12348, bou_gyo_mu_shi=7450),
         Sanctuaries(kyo_ko=7450, kyo_ko_tei_ko=5850),
+        Sanctuaries(sho_geki=9952, bou_gyo=27012),
     ],
     "エーギル王の戦鎧": [
         Sanctuaries(bin_sho=4800, sei_ki=5850),
@@ -107,6 +111,7 @@ data = {
         Sanctuaries(tai_ryoku=10440, bin_sho=4800),
         Sanctuaries(katsu_ryoku=13140, bou_gyo_mu_shi=8472),
         Sanctuaries(kyo_ko=2550, kyo_ko_tei_ko=13590),
+        Sanctuaries(sho_geki=5250, bou_gyo=12900),
     ],
     "エーギル王の明灯": [
         Sanctuaries(bin_sho=11010, sei_ki=10890),
@@ -119,6 +124,7 @@ data = {
         Sanctuaries(tai_ryoku=5850, bin_sho=11010),
         Sanctuaries(katsu_ryoku=13590, bou_gyo_mu_shi=2550),
         Sanctuaries(kyo_ko=7005, kyo_ko_tei_ko=5850),
+        Sanctuaries(sho_geki=11460, bou_gyo=31620),
     ],
     "至上マッシュの扇": [
         Sanctuaries(bin_sho=11640, sei_ki=11385),
@@ -131,6 +137,7 @@ data = {
         Sanctuaries(tai_ryoku=11385, bin_sho=11640),
         Sanctuaries(katsu_ryoku=8550, bou_gyo_mu_shi=9705),
         Sanctuaries(kyo_ko=2550, kyo_ko_tei_ko=15210),
+        Sanctuaries(sho_geki=5250, bou_gyo=12900),
     ],
     "ラケシス王の天秤": [
         Sanctuaries(bin_sho=4800, sei_ki=5850),
@@ -143,6 +150,7 @@ data = {
         Sanctuaries(tai_ryoku=5850, bin_sho=4800),
         Sanctuaries(katsu_ryoku=14647, bou_gyo_mu_shi=10402),
         Sanctuaries(kyo_ko=10402, kyo_ko_tei_ko=16132),
+        Sanctuaries(sho_geki=5250, bou_gyo=33487),
     ],
     "エーギル王の貝笛": [
         Sanctuaries(bin_sho=11010, sei_ki=10890),
@@ -155,6 +163,7 @@ data = {
         Sanctuaries(tai_ryoku=5850, bin_sho=11010),
         Sanctuaries(katsu_ryoku=13590, bou_gyo_mu_shi=2550),
         Sanctuaries(kyo_ko=9052, kyo_ko_tei_ko=5850),
+        Sanctuaries(sho_geki=11460, bou_gyo=31620),
     ],
     "幻マッシュの薬缶": [
         Sanctuaries(bin_sho=13035, sei_ki=12532),
@@ -167,8 +176,22 @@ data = {
         Sanctuaries(tai_ryoku=12532, bin_sho=13035),
         Sanctuaries(katsu_ryoku=8550, bou_gyo_mu_shi=12045),
         Sanctuaries(kyo_ko=2550, kyo_ko_tei_ko=18270),
+        Sanctuaries(sho_geki=5250, bou_gyo=12900),
     ],
-    # "ラケシス王の大剣": [  # Lv21
+    "ラケシス王の大剣": [
+        Sanctuaries(bin_sho=4800, sei_ki=5850),
+        Sanctuaries(kou_bou=7650, kyo_ko_tei_ko=19507),
+        Sanctuaries(tai_ryoku=5850, bou_gyo_mu_shi=12990),
+        Sanctuaries(katsu_ryoku=15907, kyo_ko=12045),
+        Sanctuaries(sho_geki=4800, bou_gyo=39832),
+        Sanctuaries(kou_geki=23070, bou_gyo=39832),
+        Sanctuaries(kou_bou=7650, sei_ki=5850),
+        Sanctuaries(tai_ryoku=5850, bin_sho=4800),
+        Sanctuaries(katsu_ryoku=15907, bou_gyo_mu_shi=12990),
+        Sanctuaries(kyo_ko=12045, kyo_ko_tei_ko=19507),
+        Sanctuaries(sho_geki=5250, bou_gyo=40282),
+    ],
+    # "エーギル王の幻鏡": [  # Lv22
     #     Sanctuaries(bin_sho=3390, sei_ki=4200),
     #     Sanctuaries(kou_bou=5400, kyo_ko_tei_ko=14215),
     #     Sanctuaries(tai_ryoku=4200, bou_gyo_mu_shi=9108),
